@@ -1,14 +1,77 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { ChevronDown } from "lucide-react"
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
+    <div className="relative min-h-screen bg-black overflow-hidden">
+      {/* Background Video */}
+      <video className="absolute inset-0 w-full h-full object-cover z-0" autoPlay muted loop playsInline>
+        <source
+          src="https://res.cloudinary.com/doevp9obh/video/upload/v1751630378/social_u7865913127_httpss.mj.runfy9I6hP3bjY_A_serene_cinematic_anima_3732f431-944f-4ee3-9b66-c82c1462de47_1_vjttzg.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      {/* Video Overlay */}
+      <div className="absolute inset-0 bg-black/20 z-0" />
+
+      {/* Navigation Bar */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/10 backdrop-blur-sm py-4 px-6">
+        <div className="flex justify-between items-center">
+          {/* Logo */}
+          <div className="text-white font-serif text-xl">Stillness</div>
+
+          {/* Navigation Links */}
+          <div className="flex items-center gap-8 text-white/90 font-sans text-sm font-light">
+            <a href="#" className="hover:text-white hover:scale-105 transition-colors duration-300">
+              Наша миссия
+            </a>
+            <a href="#" className="hover:text-white hover:scale-105 transition-colors duration-300">
+              Поддержать
+            </a>
+            <a href="#" className="hover:text-white hover:scale-105 transition-colors duration-300">
+              Контакты
+            </a>
+            <button className="flex items-center gap-1 hover:text-white hover:scale-105 transition-colors duration-300 cursor-pointer">
+              RU
+              <ChevronDown size={14} />
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Content */}
+      <div className="relative z-10 flex items-center h-screen">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-2xl fade-in">
+            {/* Hero Heading */}
+            <h1 className="font-serif text-white text-4xl lg:text-6xl font-normal tracking-tight mb-8">
+              Обрети покой на грани <em>тишины</em>
+            </h1>
+
+            {/* Hero Subheading */}
+            <p className="font-sans text-gray-200 text-lg lg:text-xl font-light leading-relaxed mb-12 max-w-xl">
+              Открой умиротворение через осознанную медитацию и прикоснись к глубокой тишине, что живёт между мыслями и дыханием.
+            </p>
+
+            {/* Call to Action Button */}
+            <button className="bg-white text-gray-900 font-sans font-medium px-6 py-3 rounded-lg text-base hover:bg-gray-100 hover:scale-105 hover:shadow-lg transition-all duration-300">
+              Начать путь
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="absolute bottom-6 left-0 right-0 z-10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex justify-between items-center">
+            <p className="font-sans text-white/70 text-xs font-light">2025 Stillness. Все права защищены.</p>
+            <p className="font-sans text-white/70 text-xs font-light">Создано с осознанностью</p>
+          </div>
+        </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index
